@@ -1,22 +1,17 @@
 class Shoe
-  attr_accessor :brand, :color, :size, :material, :condition
+  attr_accessor :color, :size, :material, :condition
+  attr_reader :brand
 
-    BRANDS = []
+  BRANDS = []
 
   def initialize(brand)
     @brand = brand
-    @color = color
-    @size = size
-    @material = material
-    @condition = condition
+    BRANDS << brand unless BRANDS.include?(brand)
   end
+
   def cobble
-    @condition = "new"
+    self.condition = "new"
     puts "Your shoe is as good as new!"
   end
 
-  def brand=(brand)
-    @brand = brand
-    BBRANDS << brand
-  end
 end
